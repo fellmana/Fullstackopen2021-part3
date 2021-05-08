@@ -44,10 +44,10 @@ app.get('/info', (request,response) => {
                 return result.length                
             })
     }
-    console.log(lenPerson())
+    const num = lenPerson()
 
     response.send(`<div> 
-    Phonebook contains information on ${lenPerson()} people.  
+    Phonebook contains information on ${num} people.  
     </div>
     <div> ${new Date} </div>`)
 })
