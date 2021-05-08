@@ -36,21 +36,8 @@ app.get('/api/persons/:id', (request,response,next) => {
 })
 
 app.get('/info', (request,response) => {
-
-
-
-    const getLen = () =>{
-        Person.find({}).then(result => {
-            let personLen = result.length
-        })
-        return personLen
-    }
-
-    console.log(getLen())
-    
-
     response.send(`<div> 
-    Phonebook contains information on ${0} people.  
+    Phonebook contains information on ${Person.find({}).then(result => result.length)} people.  
     </div>
     <div> ${new Date} </div>`)
 })
