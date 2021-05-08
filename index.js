@@ -22,7 +22,7 @@ app.get('/api/persons', (request,response) => {
 })
 
 app.get('/api/persons/:id', (request,response) => {
-    const person = persons.findById(request.params.id)
+    Person.findById(request.params.id)
     .then(person => {
         if (person) {
             response.json(person)
