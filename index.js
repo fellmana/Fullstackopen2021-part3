@@ -37,21 +37,14 @@ app.get('/api/persons/:id', (request,response,next) => {
 })
 
 app.get('/info', (request,response) => {
-
-    const lenPerson = () => {
         Person.find({})
             .then(result =>{
-                console.log(result.length)
-                lengthOfPhonebook = result.length            
+                response.send(`<div> 
+                Phonebook contains information on ${result.length} people.  
+                </div>
+                <div> ${new Date} </div>`)           
             })
-    }
-
-    lenPerson()
-
-    response.send(`<div> 
-    Phonebook contains information on ${lengthOfPhonebook} people.  
-    </div>
-    <div> ${new Date} </div>`)
+    
 })
 
 const generateId = () => {
