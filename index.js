@@ -47,7 +47,7 @@ app.get('/info', (request,response) => {
     console.log(lenPerson())
 
     response.send(`<div> 
-    Phonebook contains information on ${lenPerson} people.  
+    Phonebook contains information on ${lenPerson()} people.  
     </div>
     <div> ${new Date} </div>`)
 })
