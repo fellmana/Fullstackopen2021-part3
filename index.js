@@ -5,6 +5,7 @@ const app = express()
 const cors = require('cors')
 const Person = require('./models/person')
 const { request, response } = require('express')
+let lengthOfPhonebook = 0
 
 app.use(express.static('build'))
 app.use(cors())
@@ -44,10 +45,10 @@ app.get('/info', (request,response) => {
                 return result.length                
             })
     }
-    const num = lenPerson()
-
+    lengthOfPhonebook = lenPerson()
+    console.log(lengthOfPhonebook)
     response.send(`<div> 
-    Phonebook contains information on ${num} people.  
+    Phonebook contains information on ${lengthOfPhonebook} people.  
     </div>
     <div> ${new Date} </div>`)
 })
