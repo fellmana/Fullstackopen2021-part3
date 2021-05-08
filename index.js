@@ -46,6 +46,8 @@ app.get('/info', (request,response) => {
         })
     }
 
+    getLen()
+
     response.send(`<div> 
     Phonebook contains information on ${numberOfPersons} people.  
     </div>
