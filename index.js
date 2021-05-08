@@ -5,7 +5,7 @@ const app = express()
 const cors = require('cors')
 const Person = require('./models/person')
 const { request, response } = require('express')
-let lengthOfPhonebook = 0
+
 
 app.use(express.static('build'))
 app.use(cors())
@@ -37,7 +37,7 @@ app.get('/api/persons/:id', (request,response,next) => {
 })
 
 app.get('/info', (request,response) => {
-        Person.find({})
+    Person.find({})
             .then(result =>{
                 response.send(`<div> 
                 Phonebook contains information on ${result.length} people.  
@@ -102,6 +102,8 @@ const errorHandler = (error, request, response, next) => {
   
     if (error.name === 'CastError') {
       return response.status(400).send({ error: 'malformatted id' })
+    } else if (error.name === 'ValidationError'){
+      return response.status(400).send({error:error.message})
     }
   
     next(error)
