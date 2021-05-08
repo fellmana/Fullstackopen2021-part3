@@ -42,11 +42,9 @@ app.get('/info', (request,response) => {
         Person.find({})
             .then(result =>{
                 console.log(result.length)
-                return result.length                
+                lengthOfPhonebook = result.length            
             })
     }
-    lengthOfPhonebook = lenPerson()
-    console.log("len:",lengthOfPhonebook)
     response.send(`<div> 
     Phonebook contains information on ${lengthOfPhonebook} people.  
     </div>
