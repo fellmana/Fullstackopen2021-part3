@@ -25,6 +25,7 @@ const personSchema = new mongoose.Schema({
       required:true
     },
 })
+personSchema.plugin(uniqueValidator)
 
 personSchema.set('toJSON', {
     transform: (document,returnedObject) => {
