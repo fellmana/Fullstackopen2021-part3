@@ -38,9 +38,7 @@ app.get('/api/persons/:id', (request,response,next) => {
 app.get('/info', (request,response) => {
 
     const getLen = () =>{
-        Person.find({}).then(result => {
-            return result.length
-        })
+        Person.length
     }
 
     response.send(`<div> 
