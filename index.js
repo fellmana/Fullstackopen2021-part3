@@ -16,8 +16,8 @@ app.get('/', (request,response) => {
 })
 
 app.get('/api/persons', (request,response) => {
-    Person.find({}).then(persons => {
-        response.json(persons)
+    Person.find({}).then(result => {
+        response.json(result)
     })
 })
 
