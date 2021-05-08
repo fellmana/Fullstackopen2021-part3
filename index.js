@@ -41,14 +41,12 @@ app.get('/info', (request,response) => {
 
     const getLen = () =>{
         Person.find({}).then(result => {
-            let numberOfPersons = result.length
+            return result
         })
     }
 
-    getLen()
-
     response.send(`<div> 
-    Phonebook contains information on ${numberOfPersons} people.  
+    Phonebook contains information on ${getLen.length} people.  
     </div>
     <div> ${new Date} </div>`)
 })
