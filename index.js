@@ -41,8 +41,9 @@ app.get('/info', (request,response) => {
 
     const getLen = () =>{
         Person.find({}).then(result => {
-            return result.length
+            let personLen = result.length
         })
+        return personLen
     }
 
     console.log(getLen())
