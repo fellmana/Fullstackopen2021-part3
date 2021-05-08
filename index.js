@@ -42,7 +42,7 @@ app.get('/info', (request,response) => {
     }
 
     response.send(`<div> 
-    Phonebook contains information on ${getLen} people.  
+    Phonebook contains information on ${getLen()} people.  
     </div>
     <div> ${new Date} </div>`)
 })
