@@ -45,6 +45,9 @@ app.get('/info', (request,response) => {
                 lengthOfPhonebook = result.length            
             })
     }
+
+    lenPerson()
+
     response.send(`<div> 
     Phonebook contains information on ${lengthOfPhonebook} people.  
     </div>
